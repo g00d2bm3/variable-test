@@ -3,11 +3,10 @@ jobs:
   print_name:
     docker:
       - image: cimg/base:stable
-    environment:
-      MY_NAME: Dan
     steps:
       - checkout
       - run:
+          name: "echo an env var that prints my name"
           command: echo ${MY_NAME}
 workflows:
   print-name-workflow:
